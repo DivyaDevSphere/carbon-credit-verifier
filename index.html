@@ -1,18 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Carbon Credit Verification</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div id="app">
-        <!-- Content will be added in next steps -->
-    </div>
+<div id="app">
+    <section id="landing-page" class="landing-page">
+        <nav class="navbar">
+            <div class="logo">🌱 CarbonVerify</div>
+        </nav>
+
+        <div class="hero">
+            <h1>AI-Powered Carbon Credit Verification</h1>
+            <p>Verify carbon offset projects instantly using advanced AI reasoning</p>
+            <button id="get-started-btn" class="btn-primary">Get Started</button>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="icon">🤖</div>
+                <h3>AI Verification</h3>
+                <p>Google Gemini analyzes project credibility</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📊</div>
+                <h3>Real-time Scoring</h3>
+                <p>Instant risk assessment and scoring</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🗺️</div>
+                <h3>Location Intelligence</h3>
+                <p>Geographic verification with Google Maps</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section (hidden initially) -->
+    <section id="form-section" class="form-section" style="display: none;">
+    <button id="back-btn" class="btn-back">← Back</button>
     
-    <script src="js/firebase-config.js"></script>
-    <script src="js/gemini-api.js"></script>
-    <script src="js/app.js"></script>
-</body>
-</html>
+    <h2>Carbon Project Verification</h2>
+    <p class="form-subtitle">Enter project details for AI verification</p>
+
+    <form id="project-form">
+        <div class="form-group">
+            <label for="project-type">Project Type</label>
+            <select id="project-type" required>
+                <option value="">Select type</option>
+                <option value="reforestation">Reforestation</option>
+                <option value="solar">Solar Energy</option>
+                <option value="wind">Wind Energy</option>
+                <option value="biomass">Biomass</option>
+                <option value="hydro">Hydropower</option>
+                <option value="conservation">Forest Conservation</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" placeholder="Enter project location" required>
+        </div>
+
+        <div class="form-group">
+            <label for="capacity">Capacity/Area</label>
+            <input type="text" id="capacity" placeholder="e.g., 100 hectares or 50 MW" required>
+        </div>
+
+        <div class="form-group">
+            <label for="duration">Project Duration (years)</label>
+            <input type="number" id="duration" min="1" max="50" placeholder="e.g., 10" required>
+        </div>
+
+        <div class="form-group">
+            <label for="co2-claim">CO₂ Offset Claim (tons/year)</label>
+            <input type="number" id="co2-claim" min="1" placeholder="e.g., 5000" required>
+        </div>
+
+        <button type="submit" class="btn-primary btn-submit">Verify Project</button>
+    </form>
+</section>
+
+<section id="results-section" class="results-section" style="display: none;">
+</section>
+</div>
